@@ -1,35 +1,103 @@
 body {
-    background: #111;
-    font-family: Arial, sans-serif;
-    color: white;
+    background: radial-gradient(circle at top, #1a1a1a, #000);
+    font-family: "Poppins", Arial, sans-serif;
+    color: #fff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 340px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    border-radius: 18px;
     text-align: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
 }
 
-.box {
-    width: 300px;
-    margin: 120px auto;
-    padding: 20px;
-    background: #222;
-    border-radius: 10px;
+.title {
+    margin-bottom: 10px;
+    font-size: 26px;
+    font-weight: 700;
 }
 
-input {
+.subtitle {
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.form input {
     width: 90%;
-    padding: 10px;
-    margin: 10px;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 8px;
     border: none;
-    border-radius: 5px;
+    outline: none;
+    background: #222;
+    color: #fff;
 }
 
-button {
-    padding: 10px 20px;
-    background: #4CAF50;
+.btn {
+    display: inline-block;
+    width: 90%;
+    padding: 12px;
+    background: #4caf50;
     border: none;
+    border-radius: 8px;
     color: white;
-    border-radius: 5px;
+    font-weight: 600;
     cursor: pointer;
+    margin-top: 10px;
+    text-decoration: none;
 }
 
-a {
-    color: #4CAF50;
+.btn:hover {
+    background: #43a047;
+}
+
+.btn-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn.outline {
+    background: transparent;
+    border: 2px solid #4caf50;
+}
+
+.btn.outline:hover {
+    background: #4caf50;
+}
+
+.link {
+    color: #4caf50;
+    display: block;
+    margin-top: 15px;
+}
+
+.msg {
+    margin: 10px 0;
+    color: #ff6b6b;
+}
+
+.fade-in {
+    animation: fadeIn 0.8s both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
