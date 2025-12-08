@@ -38,12 +38,5 @@ for row in rows:
 
 
 # Automate Google Search Using Selenium
-from selenium import webdriver
-driver = webdriver.Chrome()
-driver.get("https://www.google.com")
-box = driver.find_element("name", "q")
-box.send_keys("Python Web Scraping")
-box.submit()
-print("Page Title:", driver.title)
-driver.quit()
+
 
