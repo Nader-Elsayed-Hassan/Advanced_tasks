@@ -17,39 +17,31 @@ def init_db():
     conn.close()
 
 init_db()
-
-
 @app.route('/')
 def home():
     return render_template('home.html')
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     msg = ""
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-
         conn = sqlite3.connect('database.db')
         c = conn.cursor()
         c.execute("SELECT * FROM users WHERE username=? AND password=?", (username, password))
         user = c.fetchone()
         conn.close()
-
         if user:
             msg = "Login successful!"
         else:
             msg = "Invalid username or password"
-
     return render_template('login.html', msg=msg)
-
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     msg = ""
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-
         try:
             conn = sqlite3.connect('database.db')
             c = conn.cursor()
@@ -59,8 +51,6 @@ def signup():
             return redirect(url_for('login'))
         except:
             msg = "Username already exists!"
-
     return render_template('signup.html', msg=msg)
-
 if __name__ == '__main__':
     app.run(debug=True)
