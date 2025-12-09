@@ -21,4 +21,4 @@ for item in products:
     })
 df = pd.DataFrame(data)
 df.to_excel("jumia_products.xlsx", index=False)
-print("Saved successfully → jumia_products.xlsx")
+print("Saved successfully -> jumia_products.xlsx")
