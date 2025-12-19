@@ -2,57 +2,49 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 
 <body>
 
     <header>
         <div class="logo">Nader Elsayed</div>
         <nav>
-            <a href="#home" id="homeBtn">HOME</a>
-            <a href="#whatido" id="whatBtn">What I Do</a>
-            <a href="#projects" id="productsBtn">My Projects</a>
-            <a href="#contacts" id="contactBtn">Contacts</a>
+            <a href="#home">HOME</a>
+            <a href="#whatido">What I Do</a>
+            <a href="#projects">My Projects</a>
+            <a href="#contacts">Contacts</a>
         </nav>
     </header>
 
-
-
-    <div class="container" id="home">
+    <section class="container" id="home">
         <div class="left">
-            <p id="hh">WELCOME TO MY WORLD</p>
-            <h1>Hi, I'm <span>Nader ELsayed</span><br>a .NET & Flutter Developer</h1>
-            <p id="ss">I’m a .NET Developer specialized in building high-performance web applications. I love turning
-                ideas into real apps.</p>
+            <p class="welcome">WELCOME TO MY WORLD</p>
+            <h1>Hi, I'm <span>Nader Elsayed</span><br>a .NET & Flutter Developer</h1>
+            <p class="desc">I’m a .NET Developer specialized in building high-performance web applications.</p>
 
             <div class="social-skill-section">
-                <div class="find-with-me">
+                <div>
                     <p class="title">FIND WITH ME</p>
                     <div class="icons">
-                        <a href="https://www.facebook.com/share/19tLJkScBx/" target="_blank"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a href="https://x.com/nadralssyd" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com/in/nader-elsayed-1b148029b" target="_blank"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/Nader-Elsayed-Hassan" target="_blank"><i
-                                class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
-                <div class="best-skill">
+
+                <div>
                     <p class="title">BEST SKILL ON</p>
                     <div class="icons">
                         <span><i class="fab fa-html5"></i></span>
                         <span><i class="fab fa-css3-alt"></i></span>
                         <span><i class="fab fa-js"></i></span>
                         <span><i class="fas fa-database"></i></span>
-                        <span><i class="fab fa-git"></i></span>
-                        <span><i class="fab fa-github"></i></span>
                     </div>
                 </div>
             </div>
@@ -61,124 +53,65 @@
         <div class="profile-img">
             <img src="Nader.jpg" alt="Profile">
         </div>
-    </div>
+    </section>
 
-    <!-- What I Do Section -->
     <section class="features" id="whatido">
         <h2>What I Do</h2>
         <div class="cards">
-            <div class="card">
-                <div class="icon"><i class="fas fa-mobile-alt"></i></div>
-                <h3>Cross-Platform Development</h3>
-                <p>Building high-performance apps using Flutter for both Android and iOS.</p>
+            <div class="feature-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Cross-Platform Apps</h3>
+                <p>Flutter apps for Android & iOS.</p>
             </div>
-            <div class="card">
-                <div class="icon"><i class="fas fa-paint-brush"></i></div>
+            <div class="feature-card">
+                <i class="fas fa-layer-group"></i>
                 <h3>MVC Architecture</h3>
-                <p>Implementing Model-View-Controller architecture for scalable and maintainable code.</p>
+                <p>Scalable and clean backend systems.</p>
             </div>
-            <div class="card">
-                <div class="icon"><i class="fas fa-bug"></i></div>
-                <h3>App Testing & Debugging</h3>
-                <p>Ensuring app stability and performance through continuous testing.</p>
-            </div>
-            <div class="card">
-                <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+            <div class="feature-card">
+                <i class="fas fa-cloud"></i>
                 <h3>API Integration</h3>
-                <p>Connecting apps to backend services and handling real-time data.</p>
-            </div>
-            <div class="card">
-                <div class="icon"><i class="fas fa-sync-alt"></i></div>
-                <h3>App Maintenance</h3>
-                <p>Providing regular updates and feature enhancements after launch.</p>
-            </div>
-            <div class="card">
-                <div class="icon"><i class="fas fa-database"></i></div>
-                <h3>Database Management</h3>
-                <p>Designing and managing databases for efficient data storage and retrieval.</p>
+                <p>Secure and fast API connections.</p>
             </div>
         </div>
     </section>
 
-    <section class="projects">
-        <h2>My Projects</h2>
-    </section>
-
-    <!-- ===== Gallery Section ===== -->
     <section class="gallery" id="projects">
+        <h2>My Projects</h2>
         <div class="gallery-grid">
             <div class="photo-card">
-                <a href="#" aria-label="Weather App demo" target="_blank" rel="noopener">
-                    <img src=""
-                        alt="Weather App">
-                </a>
-                <h3>Weather App</h3>
-                <p>Modern weather app with animated backgrounds, hourly forecasts, and location search built using
-                    Flutter.</p>
-            </div>
-            <div class="photo-card">
-                <a href="https://github.com/Nader-Elsayed-Hassan/STICKIT" aria-label="Online Store demo" target="_blank"
-                    rel="noopener">
-                    <img src="online_Shop.png" alt="Online Store">
-                </a>
+                <img src="online_Shop.png">
                 <h3>Online Store</h3>
-                <p>Feature-rich online store app with product categories, cart functionality, and smooth animations
-                    using
-                    frontend technologies.</p>
+                <p>E-commerce app with cart and products.</p>
             </div>
             <div class="photo-card">
-                <a href="https://github.com/Nader-Elsayed-Hassan/ITI_Final_Project" aria-label="E-Commerce App demo"
-                    target="_blank" rel="noopener">
-                    <img src="MVC.png" alt="Full Stack E-Commerce">
-                </a>
-                <h3>Full Stack E-Commerce web App</h3>
-                <p>Full stack e-commerce web application with user authentication, product management, and payment
-                    integration using .NET and React.</p>
+                <img src="MVC.png">
+                <h3>Full Stack App</h3>
+                <p>.NET MVC full stack web application.</p>
+            </div>
+            <div class="photo-card">
+                <img src="weather.png">
+                <h3>Weather App</h3>
+                <p>Flutter weather app with animations.</p>
             </div>
         </div>
     </section>
-    <section class="cards-contant" id="contacts">
-        <span id="title">Contacts</span>
-        <div class="contaniner">
-            <div class="card">
+
+    <section class="contact" id="contacts">
+        <h2>Contacts</h2>
+        <div class="contact-cards">
+            <div class="contact-card">
                 <i class="fas fa-phone"></i>
-                <h3>phone</h3>
+                <h3>Phone</h3>
                 <p>01157631261</p>
             </div>
-            <div class="card">
-                <i class="fa-solid fa-envelope"></i>
-                <h3>email</h3>
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
                 <p>nadralssyd@gmail.com</p>
             </div>
         </div>
     </section>
-    <script>
-        document.documentElement.style.scrollBehavior = 'smooth';
-
-        const map = {
-            'HOME': '#home',
-            'What I Do': '#whatido',
-            'My Projects': '#projects',
-            'Contacts': '#contacts'
-        };
-
-        const nav = document.querySelector('header nav');
-        if (nav) {
-            nav.addEventListener('click', (e) => {
-                const a = e.target.closest('a');
-                if (!a) return;
-                const selector = map[a.textContent.trim()];
-                if (selector) {
-                    e.preventDefault();
-                    const el = document.querySelector(selector);
-                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        }
-    </script>
-</body>
-
-</html>
 
 </body>
 
