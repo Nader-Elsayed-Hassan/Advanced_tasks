@@ -1,9 +1,37 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="card center">
-    <h1>Hello, {{ username }} 👋</h1>
-    <p>Welcome to your page</p>
+<div class="dashboard">
+
+    <!-- Welcome Card -->
+    <div class="card welcome">
+        <h1>Hello, {{ username }} <span>👋</span></h1>
+        <p>Welcome to your dashboard</p>
+    </div>
+
+    <!-- Services -->
+    <div class="card services">
+        <h2>Services</h2>
+        <ul>
+            <li>💻 Web Application Development</li>
+            <li>📱 Mobile App Development</li>
+            <li>🎨 UI / UX Design</li>
+            <li>🔗 API Integration</li>
+            <li>🗄️ Database Management</li>
+        </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="card contact">
+        <h2>Contact Us</h2>
+        <form method="post" action="/contact">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
 </div>
 
 {% endblock %}
