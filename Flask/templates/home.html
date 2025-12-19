@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="/static/style.css">
-    <title>Home</title>
-</head>
-<body>
-    <div class="container fade-in">
-        <h1 class="title">Flask Login Demo</h1>
-        <p class="subtitle">A simple authentication system</p>
+{% extends "base.html" %}
+{% block content %}
 
-        <div class="btn-group">
-            <a class="btn" href="/login">Login</a>
-            <a class="btn outline" href="/signup">Signup</a>
-        </div>
+<div class="card center">
+    <h1>Flask Login Demo</h1>
+    <p>A simple authentication system</p>
+
+    <div class="buttons">
+        <a href="/login" class="btn">Login</a>
+        <a href="/signup" class="btn outline">Signup</a>
     </div>
-</body>
-</html>
+</div>
+
+{% endblock %}

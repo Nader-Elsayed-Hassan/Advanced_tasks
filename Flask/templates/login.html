@@ -1,22 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="/static/style.css">
-    <title>Login</title>
-</head>
-<body>
-    <div class="container fade-in">
-        <h2 class="title">Login</h2>
+{% extends "base.html" %}
+{% block content %}
 
-        <form method="POST" class="form">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
+<div class="card">
+    <h2>Login</h2>
 
-            <button type="submit" class="btn">Login</button>
-        </form>
+    <form method="POST" action="/login">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
 
-        <p class="msg">{{ msg }}</p>
-        <a class="link" href="/signup">Create an account</a>
-    </div>
-</body>
-</html>
+        <button class="btn full">Login</button>
+    </form>
+
+    <p class="text">
+        Don’t have an account?
+        <a href="/signup">Signup</a>
+    </p>
+</div>
+
+{% endblock %}
