@@ -3,13 +3,14 @@
 
 <div class="dashboard">
 
-    <!-- Welcome Card -->
+    {% if tab == "dashboard" %}
     <div class="card welcome">
-        <h1>Hello, {{ username }} <span>👋</span></h1>
+        <h1>Hello, {{ username }} 👋</h1>
         <p>Welcome to your dashboard</p>
     </div>
+    {% endif %}
 
-    <!-- Services -->
+    {% if tab == "services" %}
     <div class="card services">
         <h2>Services</h2>
         <ul>
@@ -20,8 +21,9 @@
             <li>🗄️ Database Management</li>
         </ul>
     </div>
+    {% endif %}
 
-    <!-- Contact -->
+    {% if tab == "contact" %}
     <div class="card contact">
         <h2>Contact Us</h2>
         <form method="post" action="/contact">
@@ -31,6 +33,7 @@
             <button type="submit">Send Message</button>
         </form>
     </div>
+    {% endif %}
 
 </div>
 

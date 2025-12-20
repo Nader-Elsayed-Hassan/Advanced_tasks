@@ -99,14 +99,19 @@ def user_page():
     if "user" not in session or session.get("role") != "user":
         return redirect("/login")
 
-    return render_template("user.html", username=session["user"])
+    tab = request.args.get("tab", "dashboard")
+    return render_template(
+        "user.html",
+        username=session["user"],
+        tab=tab
+    )
 
 @app.route("/contact", methods=["POST"])
 def contact():
     name = request.form["name"]
     email = request.form["email"]
     message = request.form["message"]
-    flash("✅ Your message was sent successfully!", "success")
+    flash("Your message was sent successfully!", "success")
     return redirect(url_for("user_page"))
 
 

@@ -9,10 +9,17 @@
 
 <div class="navbar">
     <a href="/" class="logo">Flask Demo</a>
-    <div>
+
+    <div class="nav-links">
         {% if session.get('user') %}
+            <!-- Tabs for logged-in users -->
+            <a href="{{ url_for('user_page', tab='dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('user_page', tab='services') }}">Services</a>
+            <a href="{{ url_for('user_page', tab='contact') }}">Contact</a>
+
             <a href="/logout" class="btn outline">Logout</a>
         {% else %}
+            <!-- Guest buttons -->
             <a href="/login" class="btn">Login</a>
             <a href="/signup" class="btn outline">Signup</a>
         {% endif %}
