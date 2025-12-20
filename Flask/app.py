@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect, session, flash, url_for
 import sqlite3
 
 app = Flask(__name__)
@@ -100,6 +100,14 @@ def user_page():
         return redirect("/login")
 
     return render_template("user.html", username=session["user"])
+
+@app.route("/contact", methods=["POST"])
+def contact():
+    name = request.form["name"]
+    email = request.form["email"]
+    message = request.form["message"]
+    flash("✅ Your message was sent successfully!", "success")
+    return redirect(url_for("user_page"))
 
 
 if __name__ == "__main__":
