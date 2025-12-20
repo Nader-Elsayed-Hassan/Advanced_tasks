@@ -194,3 +194,15 @@ td {
         width: 100% !important;
     }
 }
+
+.flash {
+    padding: 12px 16px;
+    margin: 15px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.flash.success {
+    background-color: #e6fffa;
+    color: #065f46;
+}

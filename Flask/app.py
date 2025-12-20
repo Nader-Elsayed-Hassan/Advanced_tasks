@@ -7,7 +7,6 @@ DB_NAME = "database.db"
 
 def get_db():
     return sqlite3.connect(DB_NAME)
-
 @app.route("/")
 def home():
     return render_template("home.html")
@@ -17,24 +16,18 @@ def signup():
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
-
         conn = get_db()
         c = conn.cursor()
-
         c.execute("SELECT COUNT(*) FROM users")
         user_count = c.fetchone()[0]
-
         role = "admin" if user_count == 0 else "user"
-
         c.execute(
             "INSERT INTO users (username, password, role) VALUES (?, ?, ?)",
             (username, password, role)
         )
         conn.commit()
         conn.close()
-
         return redirect("/login")
-
     return render_template("signup.html")
 
 @app.route("/login", methods=["GET", "POST"])
@@ -42,7 +35,6 @@ def login():
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
-
         conn = get_db()
         c = conn.cursor()
         c.execute(
@@ -51,16 +43,13 @@ def login():
         )
         user = c.fetchone()
         conn.close()
-
         if user:
             session["user"] = user[1]
             session["role"] = user[3]
-
             if session["role"] == "admin":
                 return redirect("/admin")
             else:
                 return redirect("/user")
-
     return render_template("login.html")
 
 
@@ -68,26 +57,22 @@ def login():
 def admin():
     if "user" not in session or session.get("role") != "admin":
         return redirect("/login")
-
     conn = get_db()
     c = conn.cursor()
     c.execute("SELECT * FROM users")
     users = c.fetchall()
     conn.close()
-
     return render_template("admin.html", users=users)
 
 @app.route("/delete/<int:user_id>")
 def delete_user(user_id):
     if "user" not in session or session.get("role") != "admin":
         return redirect("/login")
-
     conn = get_db()
     c = conn.cursor()
     c.execute("DELETE FROM users WHERE id=?", (user_id,))
     conn.commit()
     conn.close()
-
     return redirect("/admin")
 
 @app.route("/logout")
@@ -98,7 +83,6 @@ def logout():
 def user_page():
     if "user" not in session or session.get("role") != "user":
         return redirect("/login")
-
     tab = request.args.get("tab", "dashboard")
     return render_template(
         "user.html",
@@ -112,7 +96,8 @@ def contact():
     email = request.form["email"]
     message = request.form["message"]
     flash("Your message was sent successfully!", "success")
-    return redirect(url_for("user_page"))
+    return redirect(url_for("user_page", tab="contact"))
+
 
 
 if __name__ == "__main__":
@@ -128,5 +113,4 @@ if __name__ == "__main__":
     """)
     conn.commit()
     conn.close()
-
     app.run(debug=True)
